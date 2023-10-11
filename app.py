@@ -3,13 +3,12 @@ from prettytable import PrettyTable
 
 # Initialising Variables
 student_data = {}
-pretty_table = PrettyTable()
 
 # Function to Add Data
 def add_student_data():
     print()
     number_of_entries = int(input("Enter the number of entries to be inserted: "))
-    for i in range(number_of_entries):
+    for _ in range(number_of_entries):
         student_name = input("Enter the name of the student: ")
         while not student_name:
             print("Enter a valid name--->")
@@ -30,6 +29,7 @@ def add_student_data():
 
 # Function to Display Data
 def display_student_data():
+    pretty_table = PrettyTable()
     print()
     print("Displaying all entries in the repository: ")
     pretty_table.field_names = ["Name", "Phone Number", "E-mail Address"]

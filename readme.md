@@ -9,7 +9,7 @@ The application includes three main functions:
 
 ## In Depth Explanation
 ### Add Data Function
-This function allows the user to add data to the database. The user can add a name, email address and phone number. The data is stored in variables because I'm a dumbass and didn't know how to use a database at the time.
+This function allows the user to add data to the database. The user can add a name, email address and phone number. The data is stored as a dictionary in a JSON file which is used as a database.
 
 ### Display Data Function
 This function allows the user to display the data in the database in a table. The table is made using the prettytable library. The table includes the name, email address and phone number of the person.

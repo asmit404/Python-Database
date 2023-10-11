@@ -1,8 +1,21 @@
 # Importing Libraries
+import os
+import json
 from prettytable import PrettyTable
 
 # Initialising Variables
 student_data = {}
+
+# Function to Save and Load Data
+def saveDB():
+    with open("out.json", "w") as outfile:
+        json.dump(student_data, outfile)
+
+def loadDB():
+    if os.path.exists("out.json"):
+        with open("out.json") as infile:
+            saved_data = json.load(infile)
+            student_data.update(saved_data)
 
 # Function to Add Data
 def add_student_data():
@@ -25,6 +38,8 @@ def add_student_data():
             student_email_address = input("Enter the email address of the student: ")
 
         student_data[student_name] = {"Phone Number": student_phone_number, "Email Address": student_email_address}
+        print("Entry added successfully.")
+    saveDB()
     main()
 
 # Function to Display Data
@@ -77,6 +92,7 @@ def search_student_data():
 
 # Main Function
 def main():
+    loadDB()
     print()
     print("What do you want to do:")
     print("1. Add")
